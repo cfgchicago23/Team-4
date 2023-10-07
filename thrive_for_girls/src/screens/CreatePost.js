@@ -48,7 +48,8 @@ const CreatePost = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    paddingTop: 80,
+    padding: 30
   },
   label: {
     fontSize: 18,

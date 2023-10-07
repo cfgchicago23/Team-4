@@ -17,13 +17,13 @@ export default function StackNavigator() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name='LoginTemp' component={Login}/>
+        <Stack.Screen name='Register' component ={Register}/>
         <Stack.Screen name='HomeScreen' component={TabNavigator}/>
         <Stack.Screen name='AdimHomeScreen' component={AdminTabNav}/>
         <Stack.Screen name='PostDetails' component={PostDetails}/>
         <Stack.Screen name='CreatePost' component={CreatePost}/>
         <Stack.Screen name='LessonDetails' component={LessonDetails}/>
         <Stack.Screen name='PostComments' component={PostComments}/>
-        <Stack.Screen name='Register' component ={Register}/>
     </Stack.Navigator>
   );
 }
