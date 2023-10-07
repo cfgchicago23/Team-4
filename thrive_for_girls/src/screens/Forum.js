@@ -27,7 +27,7 @@ const Forum = () => {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <TouchableOpacity
-            onPress={() => navigation.navigate('PostDetails', { post: item })}
+            onPress={() => navigation.navigate('PostComments', { post: item })}
           >
             <View style={{ padding: 16, borderBottomWidth: 1, borderColor: '#ccc' }}>
               <Text style={{ fontSize: 18 }}>{item.title}</Text>
