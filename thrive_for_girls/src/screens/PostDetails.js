@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
+import { comments } from './ForumData';
 
 const PostDetails = ({ route }) => {
   const { post } = route.params;

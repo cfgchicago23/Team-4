@@ -1,12 +1,27 @@
-// Forum.js
-
 import React from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { posts } from './ForumData'; // Import your sample data
+import { AntDesign } from '@expo/vector-icons'; // Import AntDesign icons
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
-const Forum = ({ navigation }) => {
+
+const Forum = () => {
+  const navigation = useNavigation();
+  const handleNewPost = () => {
+    
+    // Navigate to the screen where users can create a new post (an empty textbox for input)
+    navigation.navigate('CreatePost');
+  };
+
   return (
     <View style={{ flex: 1, padding: 16 }}>
+      <TouchableOpacity onPress={handleNewPost}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 16 }}>
+          <Text style={{ fontSize: 18, marginRight: 10 }}>Create a New Post</Text>
+          <AntDesign name="plus" size={24} color="black" />
+        </View>
+      </TouchableOpacity>
+
       <FlatList
         data={posts}
         keyExtractor={(item) => item.id.toString()}
