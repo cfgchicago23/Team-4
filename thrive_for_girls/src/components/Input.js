@@ -8,12 +8,14 @@ import {
   Touchable,
   TouchableOpacity,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 // import { createStackNavigator } from "@react-navigation/stack";
 
 export default function Input() {
   const navigation = useNavigation();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <KeyboardAvoidingView style={styles.inputGroup}>
 

@@ -5,9 +5,9 @@ import Welcome from "../components/Welcome";
 
 export default function Login() {
   return (
-    <SafeAreaView>
-      {/* <Logo /> */}
-      <Welcome />
+    <SafeAreaView style={{backgroundColor: "white", flex: 1}}>
+      <Logo />
+      {/* <Welcome /> */}
       <Input />
     </SafeAreaView>
   );

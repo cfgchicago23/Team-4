@@ -5,7 +5,7 @@ export default function Logo() {
     return (
         <View style={styles.img}>
             <Image
-                source={require('../assets/logoOrange.webp')}
+                source={require('../../assets/capture.png')}
                 style = {{ width: 350, height:105 }}
             />
         </View>
