@@ -8,8 +8,31 @@ import {
   FlatList,
   SafeAreaView,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage"; 
 
-const Profile = () => {
+const Profile = (navigation) => {
+  const handleSignOut = async () => {
+    try{
+      await AsyncStorage.clear();
+      navigation.navigate("login");
+    } catch (error) {
+      console.error("Error signing out", error);
+    }
+  };
+  return (
+    <View style={styles.container}>
+      {/* ...other profile content */}
+
+      {/* Sign Out button */}
+      <TouchableOpacity
+        style={styles.buttonContainer}
+        onPress={handleSignOut}
+      >
+        <Text style={styles.buttonText}>Sign Out</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
   // const [options, setOptions] = useState([
   //   {
   //     id: 1,
@@ -199,7 +222,7 @@ name: {
 },
 info: {
   fontSize: 16,
-  color: '#00BFFF',
+  color: 'F5C1E9',
   marginTop: 10,
 },
 description: {
@@ -217,7 +240,24 @@ buttonContainer: {
   marginBottom: 20,
   width: 250,
   borderRadius: 30,
-  backgroundColor: '#00BFFF',
+  backgroundColor: '#F5C1E9',
+},
+
+buttonContainer: {
+  marginTop: 10,
+  height: 45,
+  flexDirection: "row",
+  justifyContent: "center",
+  alignItems: "center",
+  marginBottom: 20,
+  width: 250,
+  borderRadius: 30,
+  backgroundColor: "#F5C1E9",
+},
+buttonText: {
+  color: "white",
+  fontSize: 16,
+  fontWeight: "bold",
 },
 })
 
