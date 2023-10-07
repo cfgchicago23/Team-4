@@ -14,8 +14,9 @@ const Forum = () => {
 
   return (
     <View style={{ flex: 1, padding: 16 }}>
-      <TouchableOpacity onPress={handleNewPost}>
-        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 16 }}>
+      {/* Adjust the alignItems and margin properties */}
+      <TouchableOpacity onPress={handleNewPost} style={{ alignItems: 'center', marginTop: 20 }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <Text style={{ fontSize: 18, marginRight: 10 }}>Create a New Post</Text>
           <AntDesign name="plus" size={24} color="black" />
         </View>
