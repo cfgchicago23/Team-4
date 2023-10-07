@@ -1,0 +1,13 @@
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+
+@app.route('/forum', methods=['GET', 'POST'])
+def forum():
+    if request.method == 'POST':
+        # Get the text entered by the user in the text box
+        user_input = request.form['user_input']
+        # Here, you can process and store the user's input as needed
+
+    return render_template('forum.py')
