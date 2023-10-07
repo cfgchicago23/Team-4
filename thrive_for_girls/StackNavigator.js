@@ -18,6 +18,7 @@ export default function StackNavigator() {
         <Stack.Screen name='AdimHomeScreen' component={AdminTabNav}/>
         <Stack.Screen name='PostDetails' component={PostDetails}/>
         <Stack.Screen name='LessonDetails' component={LessonDetails}/>
+        <Stack.Screen name='Register' component ={Register}/>
     </Stack.Navigator>
   );
 }

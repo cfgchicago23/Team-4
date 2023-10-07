@@ -74,6 +74,12 @@ export default function Input() {
           Login
         </Text>
       </TouchableOpacity>
+
+      <TouchableOpacity onPress={()=>navigation.replace("Register")} style={styles.button}>
+        <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }}>
+          New here? Register
+        </Text>
+      </TouchableOpacity>
     </KeyboardAvoidingView>
   );
 }
