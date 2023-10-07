@@ -3,6 +3,9 @@
 # dependencies
 node_modules/
 
+*.pyc
+flask-server/venv/
+
 # Expo
 .expo/
 dist/
