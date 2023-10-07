@@ -50,11 +50,8 @@ import {
             secureTextEntry
           />
         </View>
-  
-        <TouchableOpacity
-          onPress={() => navigation.replace("Done")}
-          style={styles.button}
-        >
+
+        <TouchableOpacity onPress={() => navigation.navigate("LoginTemp")} style={styles.button}>
           <Text>Register</Text>
         </TouchableOpacity>
         
