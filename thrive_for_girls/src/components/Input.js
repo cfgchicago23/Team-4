@@ -17,6 +17,7 @@ export default function Input() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // create users for testing and demo
   users = [
     {
       first_name: "Kaylee Mei",
@@ -28,21 +29,31 @@ export default function Input() {
       first_name: "Lily",
       email: "Lily@gmail.com",
       password: "abc123",
-      type: "leader"
-    }
-  ]
+      type: "leader",
+    },
+  ];
 
-  const handleLogin = () => {
-    for (let i = 0; i < users.length; i++)  {
-      if (users[i].email === email && users[i].password === password) {
-        navigation.navigate("HomeScreen", users[i])
+  const handleLogin = async () => {
+    //check for matching user and password
+    for (let i = 0; i < users.length; i++) {
+      if (
+        users[i].email === email &&
+        users[i].password === password &&
+        users[i].type == "user"
+      ) {
+        navigation.navigate("HomeScreen", users[i]);
+      } else if (
+        users[i].email === email &&
+        users[i].password === password &&
+        users[i].type == "leader"
+      ) {
+        navigation.navigate("AdimHomeScreen", users[i]);
       }
     }
-  }
+  };
 
   return (
     <KeyboardAvoidingView style={styles.inputGroup}>
-
       <View style={styles.container}>
         <TextInput
           style={styles.input}
@@ -58,10 +69,7 @@ export default function Input() {
           secureTextEntry
         />
       </View>
-      <TouchableOpacity
-        onPress={handleLogin}
-        style={styles.button}
-      >
+      <TouchableOpacity onPress={handleLogin} style={styles.button}>
         <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }}>
           Login
         </Text>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet, FlatList, TouchableOpacity, View, Image, Text, StatusBar } from 'react-native';
+import { StyleSheet, FlatList, TouchableOpacity, View, Image, Text, StatusBar, SafeAreaView } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Lessons = () => {
   const data = [

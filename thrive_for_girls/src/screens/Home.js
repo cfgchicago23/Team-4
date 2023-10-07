@@ -4,8 +4,12 @@ import HomeHeader from "../components/HomeHeader";
 import Emotion from "../components/Emotion";
 import Motivational from "../components/Motivational";
 import LessonCard from "../components/LessonCard";
+import { useRoute } from "@react-navigation/native";
 
 export default function Home() {
+  const route = useRoute();
+  console.log(route.params)
+
   const lessons = [
     {
       title: "Lesson 1",
@@ -58,6 +62,5 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     margin: 20,
     marginTop: 30,
-
   },
 });

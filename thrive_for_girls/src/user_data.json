@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "first_name": "Kaylee Mei",
+      "email": "Kayleemeichao@gmail.com",
+      "password": "abc123",
+      "type": "user"
+    },
+    {
+      "first_name": "Lily",
+      "email": "Lily@gmail.com",
+      "password": "abc123",
+      "type": "leader"
+    }
+  ]
+}
