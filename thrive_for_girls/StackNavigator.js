@@ -20,6 +20,7 @@ export default function StackNavigator() {
         <Stack.Screen name='PostDetails' component={PostDetails}/>
         <Stack.Screen name='CreatePost' component={CreatePost}/>
         <Stack.Screen name='LessonDetails' component={LessonDetails}/>
+        <Stack.Screen name='Register' component ={Register}/>
     </Stack.Navigator>
   );
 }
