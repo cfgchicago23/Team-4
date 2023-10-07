@@ -4,7 +4,7 @@ import Entypo from "react-native-vector-icons/Entypo";
 
 export default function Emotion() {
   const [happySelected, setHappySelected] = useState(false);
-  const [neutralSelected, setNeutralSelected] = useState(true);
+  const [neutralSelected, setNeutralSelected] = useState(false);
   const [sadSelected, setSadSelected] = useState(false);
 
   return (

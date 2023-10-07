@@ -22,7 +22,7 @@ class SentimentChart extends Component {
         4: 0.8,
         5: 0.5,
         6: 0.3,
-        7: 0.2,
+        7: 0.4,
         8: 0.6,
         9: 0.9,
       },

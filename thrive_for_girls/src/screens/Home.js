@@ -12,20 +12,20 @@ export default function Home() {
 
   const lessons = [
     {
-      title: "Lesson 1",
-      description: "Add description of Lesson 1",
+      title: "Empowerment",
+      description: "Empowering girls",
     },
     {
-      title: "Lesson 2",
-      description: "Add description of Lesson 2",
+      title: "Self Confidence",
+      description: "You are Kenough",
     },
     {
-      title: "Lesson 3",
-      description: "Add description of Lesson 2",
+      title: "Safety First",
+      description: "Strangers are not your friends",
     },
     {
-      title: "Lesson 4",
-      description: "Add description of Lesson 2",
+      title: "Smart Choices",
+      description: "Always think before you act",
     },
   ];
   return (
