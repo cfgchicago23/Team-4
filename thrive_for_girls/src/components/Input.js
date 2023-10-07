@@ -8,41 +8,63 @@ import {
   Touchable,
   TouchableOpacity,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
+// import { createStackNavigator } from "@react-navigation/stack";
 
 export default function Input() {
   const navigation = useNavigation();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  users = [
+    {
+      first_name: "Kaylee Mei",
+      email: "Kayleemeichao@gmail.com",
+      password: "abc123",
+      type: "user",
+    },
+    {
+      first_name: "Lily",
+      email: "Lily@gmail.com",
+      password: "abc123",
+      type: "leader"
+    }
+  ]
+
+  const handleLogin = () => {
+    for (let i = 0; i < users.length; i++)  {
+      if (users[i].email === email && users[i].password === password) {
+        navigation.navigate("HomeScreen", users[i])
+      }
+    }
+  }
+
   return (
     <KeyboardAvoidingView style={styles.inputGroup}>
-      <View style={styles.container}>
-        <TextInput
-          style={styles.input}
-          placeholder="Name"
-          onChangeText={(text) => {}}
-        />
-      </View>
 
       <View style={styles.container}>
         <TextInput
           style={styles.input}
           placeholder="Email"
-          onChangeText={(text) => {}}
+          onChangeText={(text) => setEmail(text)}
         />
       </View>
       <View style={styles.container}>
         <TextInput
           style={styles.input}
           placeholder="Password"
-          onChangeText={(text) => {}}
+          onChangeText={(text) => setPassword(text)}
           secureTextEntry
         />
       </View>
       <TouchableOpacity
-        onPress={() => navigation.navigate("HomeScreen")}
+        onPress={handleLogin}
         style={styles.button}
       >
-        <Text>Login</Text>
+        <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }}>
+          Login
+        </Text>
       </TouchableOpacity>
     </KeyboardAvoidingView>
   );
@@ -55,7 +77,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   container: {
-    // backgroundColor: "tomato",
     width: "80%",
     padding: 5,
   },
@@ -69,6 +90,7 @@ const styles = StyleSheet.create({
   },
   button: {
     fontSize: 18,
+    backgroundColor: "black",
     borderColor: "black",
     borderWidth: 1,
     margin: 5,
