@@ -3,21 +3,12 @@ import Logo from "./components/Logo";
 import Welcome from "./components/Welcome";
 import Input from "./components/Input";
 
-export default function App() {
+export default function Login() {
   return (
-    <View style={styles.container}>
+    <View>
       <Logo />
       <Welcome />
       <Input />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-});
