@@ -144,7 +144,7 @@ return (
     />
     <View style={styles.body}>
       <View style={styles.bodyContent}>
-        <Text style={styles.name}>John Doe</Text>
+        <Text style={styles.name}>Kaylee Mai</Text>
         <Text style={styles.info}>UX Designer / Mobile developer</Text>
         <Text style={styles.description}>
           Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis,
