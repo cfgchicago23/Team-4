@@ -20,6 +20,7 @@ class SentimentChart extends Component {
         9: 0.9,
       },
       sadSentimentCount: 0,
+      // This is a mock data structure to show how you might store the club members
       clubMembers: [
         {
           clubName: 'Club A',
