@@ -1,12 +1,11 @@
 import React from 'react';
-import Home from './src/screens/Home';
+import Dashboard from './src/screens/Dashboard';
 import Profile from './src/screens/Profile';
 import Lessons from './src/screens/Lessons';
 import Forum from './src/screens/Forum';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 
 const Tab = createBottomTabNavigator();
 
@@ -24,9 +23,8 @@ export default function TabNavigator() {
                 } else if (route.name === "Lessons") {
                     iName = focused ? 'library-sharp' : 'library-outline';
                 }
-                
 
-                else if (route.name === "Forum"){
+                else if (route.name == "Forum"){
                     iName = focused ? 'chatbubble-ellipses-sharp' : 'chatbubble-ellipses-outline';
                 }
 
@@ -41,9 +39,10 @@ export default function TabNavigator() {
             tabBarInactiveTintColor: 'gray',
 
         })}>
-            <Tab.Screen name='Home' component={Home} options={{headerShown: false}}/>
+            <Tab.Screen name='Home' component={Dashboard} options={{headerShown: false}}/>
             <Tab.Screen name='Lessons' component={Lessons} options={{headerShown: false}}/>
             <Tab.Screen name='Profile' component={Profile} options={{headerShown: false}}/>
+            <Tab.Screen name='Forum' component={Forum} options = {{headerShown: false}}/>
         </Tab.Navigator>
     )
 }
