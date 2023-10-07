@@ -15,7 +15,7 @@ const Lessons = () => {
   const data = [
     {
       id: 1,
-      title: "Lesson One",
+      title: "Empowerment",
       color: "#11ad09",
       completed: 1,
       icon: 'head-lightbulb'
@@ -23,7 +23,7 @@ const Lessons = () => {
 
     {
       id: 2,
-      title: "Lesson Two",
+      title: "Happiness",
       color: "#11ad09",
       completed: 1,
       icon: 'head-lightbulb'
@@ -32,7 +32,7 @@ const Lessons = () => {
 
     {
       id: 3,
-      title: "Lesson Three",
+      title: "Good Friends",
       color: "#11ad09",
       completed: 1,
       icon: 'material-design'
@@ -40,7 +40,7 @@ const Lessons = () => {
 
     {
       id: 4,
-      title: "Lesson Four",
+      title: "Self-Confidence",
       color: "#11ad09",
       completed: 1,
       icon: 'head-lightbulb'
@@ -48,7 +48,7 @@ const Lessons = () => {
 
     {
       id: 5,
-      title: "Lesson Five",
+      title: "Good Decisions",
       color: "#11ad09",
       completed: 1,
       icon: 'material-design'
@@ -56,7 +56,7 @@ const Lessons = () => {
 
     {
       id: 6,
-      title: "Lesson Six",
+      title: "Say No",
       color: "#11ad09",
       completed: 1,
       icon: 'head-lightbulb'
@@ -64,28 +64,28 @@ const Lessons = () => {
 
     {
       id: 7,
-      title: "Lesson Seven",
+      title: "Positive Health",
       color: "#11ad09",
       completed: 1,
       icon: 'material-ui'
     },
     {
       id: 8,
-      title: "Lesson Eight",
+      title: "Self Defense",
       color: "#11ad09",
       completed: 1,
       icon: 'head-lightbulb'
     },
     {
       id: 9,
-      title: "Lesson Nine",
+      title: "Education",
       color: "#11ad09",
       completed: 1,
       icon: 'material-ui'
     },
     {
       id: 10,
-      title: "Lesson Ten",
+      title: "Keep Going",
       color: "#11ad09",
       completed: 1,
       icon: 'material-design'
