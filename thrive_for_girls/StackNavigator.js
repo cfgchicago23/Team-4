@@ -9,6 +9,7 @@ import PostDetails from "./src/screens/PostDetails";
 import CreatePost from "./src/screens/CreatePost";
 import LessonDetails from "./src/screens/LessonDetails";
 import PostComments from "./src/screens/PostComments";
+import Register from "./src/screens/Register";
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ export default function StackNavigator() {
         <Stack.Screen name='CreatePost' component={CreatePost}/>
         <Stack.Screen name='LessonDetails' component={LessonDetails}/>
         <Stack.Screen name='PostComments' component={PostComments}/>
+        <Stack.Screen name='Register' component ={Register}/>
     </Stack.Navigator>
   );
 }
