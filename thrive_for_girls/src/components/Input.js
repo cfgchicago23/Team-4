@@ -16,6 +16,30 @@ export default function Input() {
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  users = [
+    {
+      first_name: "Kaylee Mei",
+      email: "Kayleemeichao@gmail.com",
+      password: "abc123",
+      type: "user",
+    },
+    {
+      first_name: "Lily",
+      email: "Lily@gmail.com",
+      password: "abc123",
+      type: "leader"
+    }
+  ]
+
+  const handleLogin = () => {
+    for (let i = 0; i < users.length; i++)  {
+      if (users[i].email === email && users[i].password === password) {
+        navigation.navigate("HomeScreen", users[i])
+      }
+    }
+  }
+
   return (
     <KeyboardAvoidingView style={styles.inputGroup}>
 
@@ -23,19 +47,19 @@ export default function Input() {
         <TextInput
           style={styles.input}
           placeholder="Email"
-          onChangeText={(text) => {}}
+          onChangeText={(text) => setEmail(text)}
         />
       </View>
       <View style={styles.container}>
         <TextInput
           style={styles.input}
           placeholder="Password"
-          onChangeText={(text) => {}}
+          onChangeText={(text) => setPassword(text)}
           secureTextEntry
         />
       </View>
       <TouchableOpacity
-        onPress={() => navigation.navigate("HomeScreen")}
+        onPress={handleLogin}
         style={styles.button}
       >
         <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }}>
