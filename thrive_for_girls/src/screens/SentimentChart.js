@@ -1,6 +1,13 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, Platform } from 'react-native';
-import { LineChart } from 'react-native-chart-kit';
+import React, { Component } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Platform,
+  SafeAreaView,
+} from "react-native";
+import { LineChart } from "react-native-chart-kit";
 
 class SentimentChart extends Component {
   constructor(props) {
@@ -23,28 +30,28 @@ class SentimentChart extends Component {
       // This is a mock data structure to show how you might store the club members
       clubMembers: [
         {
-          clubName: 'Club A',
-          memberName: 'Member 1',
+          clubName: "Club A",
+          memberName: "Member 1",
           sentiment: 0.75,
         },
         {
-          clubName: 'Club B',
-          memberName: 'Member 2',
+          clubName: "Club B",
+          memberName: "Member 2",
           sentiment: 0.42,
         },
         {
-          clubName: 'Club A',
-          memberName: 'Member 3',
+          clubName: "Club A",
+          memberName: "Member 3",
           sentiment: 0.65,
         },
         {
-          clubName: 'Club C',
-          memberName: 'Member 4',
+          clubName: "Club C",
+          memberName: "Member 4",
           sentiment: 0.28,
         },
         {
-          clubName: 'Club B',
-          memberName: 'Member 5',
+          clubName: "Club B",
+          memberName: "Member 5",
           sentiment: 0.88,
         },
       ],
@@ -74,56 +81,60 @@ class SentimentChart extends Component {
     const data = Object.values(sentimentScores);
 
     const chartConfig = {
-      backgroundGradientFrom: '#ffffff',
-      backgroundGradientTo: '#ffffff',
+      backgroundGradientFrom: "#ffffff",
+      backgroundGradientTo: "#ffffff",
       color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
       strokeWidth: 2,
     };
 
     return (
-      <ScrollView contentContainerStyle={styles.container}>
-        <Text style={styles.chartLabel}>Club A Sentiment </Text>
-        <LineChart
-          data={{
-            labels,
-            datasets: [
-              {
-                data,
-                color: (opacity = 1) => `rgba(0, 122, 255, ${opacity})`,
-                strokeWidth: 2,
-              },
-            ],
-          }}
-          width={400}
-          height={220}
-          yAxisLabel=""
-          chartConfig={chartConfig}
-        />
+      <View style={{backgroundColor: "white", flex: 1}}>
+        <SafeAreaView contentContainerStyle={styles.container}>
+          <Text style={styles.chartLabel}>Club X Sentiment </Text>
+            <LineChart
+              data={{
+                labels,
+                datasets: [
+                  {
+                    data,
+                    color: (opacity = 1) => `rgba(0, 122, 255, ${opacity})`,
+                    strokeWidth: 2,
+                  },
+                ],
+              }}
+              width={350}
+              height={220}
+              yAxisLabel=""
+              chartConfig={chartConfig}
+              style={{ alignSelf: "center", borderRadius: 10}}
+            />
+          {/* {Platform.OS === "android" && (
+            <Text style={styles.androidMessage}>Android Specific Message</Text>
+          )}
 
-        {Platform.OS === 'android' && (
-          <Text style={styles.androidMessage}>Android Specific Message</Text>
-        )}
+          {Platform.OS === "ios" && (
+            <Text style={styles.iosMessage}>iOS Specific Message</Text>
+          )} */}
 
-        {Platform.OS === 'ios' && (
-          <Text style={styles.iosMessage}>iOS Specific Message</Text>
-        )}
+          {sadSentimentCount > 3 && (
+            <Text style={styles.sadSentimentMessage}>
+              Members have been trending sad for {sadSentimentCount} days.
+            </Text>
+          )}
 
-        {sadSentimentCount > 3 && (
-          <Text style={styles.sadSentimentMessage}>
-            You recorded a sad sentiment for more than {sadSentimentCount} days, feel free to check in with your club leader.
-          </Text>
-        )}
-
-        <View style={styles.membersContainer}>
-          {clubMembers.map((member, index) => (
-            <View key={index} style={styles.memberItem}>
-              <Text style={styles.memberName}>{member.memberName}</Text>
-              <Text style={styles.clubName}>{member.clubName}</Text>
-              <Text style={styles.sentiment}>Sentiment: {member.sentiment}</Text>
-            </View>
-          ))}
-        </View>
-      </ScrollView>
+          <ScrollView style={styles.membersContainer}>
+            {clubMembers.map((member, index) => (
+              <View key={index} style={styles.memberItem}>
+                <Text style={styles.memberName}>{member.memberName}</Text>
+                <Text style={styles.clubName}>{member.clubName}</Text>
+                <Text style={styles.sentiment}>
+                  Sentiment: {member.sentiment}
+                </Text>
+              </View>
+            ))}
+          </ScrollView>
+        </SafeAreaView>
+      </View>
     );
   }
 }
@@ -131,50 +142,53 @@ class SentimentChart extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    marginTop: 20,
+    justifyContent: "center",
+    margin: 20,
     paddingHorizontal: 20,
   },
   chartLabel: {
     fontSize: 24,
     marginBottom: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
+    textAlign: "center",
+    alignSelf: "center",
   },
   androidMessage: {
-    color: 'green',
+    color: "green",
     fontSize: 18,
   },
   iosMessage: {
-    color: 'blue',
+    color: "blue",
     fontSize: 18,
   },
   sadSentimentMessage: {
     marginTop: 20,
-    color: 'red',
+    color: "black",
     fontSize: 18,
-    fontStyle: 'italic',
+    fontStyle: "italic",
+    textAlign: "center",
   },
   membersContainer: {
-    marginTop: 20,
-    backgroundColor: '#f5f5f5',
+    margin: 20,
+    backgroundColor: "white",
     borderRadius: 10,
     padding: 10,
   },
   memberItem: {
-    flexDirection: 'row',
+    flexDirection: "row",
     marginBottom: 10,
-    alignItems: 'center',
+    alignItems: "center",
     padding: 10,
-    borderRadius: 5,
-    backgroundColor: 'white',
-    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    borderRadius: 10,
+    backgroundColor: "pink",
+    shadowColor: "rgba(0, 0, 0, 0.1)",
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 1,
     shadowRadius: 2,
     elevation: 2,
   },
   memberName: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginRight: 10,
     fontSize: 16,
   },
