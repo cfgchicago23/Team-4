@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Platform } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 
 class SentimentChart extends Component {
@@ -19,7 +19,7 @@ class SentimentChart extends Component {
         8: 0.6,
         9: 0.9,
       },
-      sadSentimentCount: 0, // Initialize the count
+      sadSentimentCount: 0,
       clubMembers: [
         {
           clubName: 'Club A',
@@ -51,7 +51,6 @@ class SentimentChart extends Component {
   }
 
   componentDidMount() {
-    // Calculate the sad sentiment count on component mount
     this.calculateSadSentimentCount();
   }
 
@@ -59,14 +58,12 @@ class SentimentChart extends Component {
     const { sentimentScores } = this.state;
     let sadCount = 0;
 
-    // Loop through sentiment scores and count days with sentiment below 0.35
     for (const time in sentimentScores) {
       if (sentimentScores[time] < 0.7) {
         sadCount++;
       }
     }
 
-    // Update state with the count
     this.setState({ sadSentimentCount: sadCount });
   }
 
@@ -83,8 +80,8 @@ class SentimentChart extends Component {
     };
 
     return (
-      <View style={styles.container}>
-        <Text style={styles.chartLabel}>User Sentiment Over Time</Text>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Text style={styles.chartLabel}>Club A Sentiment </Text>
         <LineChart
           data={{
             labels,
@@ -102,14 +99,20 @@ class SentimentChart extends Component {
           chartConfig={chartConfig}
         />
 
-        {/* Display sad sentiment message if count exceeds a threshold */}
+        {Platform.OS === 'android' && (
+          <Text style={styles.androidMessage}>Android Specific Message</Text>
+        )}
+
+        {Platform.OS === 'ios' && (
+          <Text style={styles.iosMessage}>iOS Specific Message</Text>
+        )}
+
         {sadSentimentCount > 3 && (
           <Text style={styles.sadSentimentMessage}>
             You recorded a sad sentiment for more than {sadSentimentCount} days, feel free to check in with your club leader.
           </Text>
         )}
 
-        {/* Display the list of club members */}
         <View style={styles.membersContainer}>
           {clubMembers.map((member, index) => (
             <View key={index} style={styles.memberItem}>
@@ -119,20 +122,28 @@ class SentimentChart extends Component {
             </View>
           ))}
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     alignItems: 'center',
     marginTop: 20,
   },
   chartLabel: {
     fontSize: 20,
     marginBottom: 10,
+  },
+  androidMessage: {
+    // Android-specific styles
+    color: 'green',
+  },
+  iosMessage: {
+    // iOS-specific styles
+    color: 'blue',
   },
   sadSentimentMessage: {
     marginTop: 10,
