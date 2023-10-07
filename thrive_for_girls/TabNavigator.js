@@ -24,8 +24,9 @@ export default function TabNavigator() {
                 } else if (route.name === "Lessons") {
                     iName = focused ? 'library-sharp' : 'library-outline';
                 }
+                
 
-                else if (route.name == "Forum"){
+                else if (route.name === "Forum"){
                     iName = focused ? 'chatbubble-ellipses-sharp' : 'chatbubble-ellipses-outline';
                 }
 

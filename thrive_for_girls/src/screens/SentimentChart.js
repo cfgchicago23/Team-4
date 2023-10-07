@@ -130,42 +130,61 @@ class SentimentChart extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
+    flex: 1,
     alignItems: 'center',
     marginTop: 20,
+    paddingHorizontal: 20,
   },
   chartLabel: {
-    fontSize: 20,
-    marginBottom: 10,
+    fontSize: 24,
+    marginBottom: 20,
+    fontWeight: 'bold',
   },
   androidMessage: {
-    // Android-specific styles
     color: 'green',
+    fontSize: 18,
   },
   iosMessage: {
-    // iOS-specific styles
     color: 'blue',
+    fontSize: 18,
   },
   sadSentimentMessage: {
-    marginTop: 10,
+    marginTop: 20,
     color: 'red',
-    fontSize: 16,
+    fontSize: 18,
+    fontStyle: 'italic',
   },
   membersContainer: {
     marginTop: 20,
+    backgroundColor: '#f5f5f5',
+    borderRadius: 10,
+    padding: 10,
   },
   memberItem: {
     flexDirection: 'row',
-    marginBottom: 5,
+    marginBottom: 10,
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 5,
+    backgroundColor: 'white',
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 1,
+    shadowRadius: 2,
+    elevation: 2,
   },
   memberName: {
     fontWeight: 'bold',
     marginRight: 10,
+    fontSize: 16,
   },
   clubName: {
     marginRight: 10,
+    fontSize: 16,
   },
-  sentiment: {},
+  sentiment: {
+    fontSize: 16,
+  },
 });
 
 export default SentimentChart;
