@@ -16,13 +16,6 @@ export default function Input() {
   const navigation = useNavigation();
   return (
     <KeyboardAvoidingView style={styles.inputGroup}>
-      <View style={styles.container}>
-        <TextInput
-          style={styles.input}
-          placeholder="Name"
-          onChangeText={(text) => {}}
-        />
-      </View>
 
       <View style={styles.container}>
         <TextInput
@@ -43,7 +36,9 @@ export default function Input() {
         onPress={() => navigation.navigate("HomeScreen")}
         style={styles.button}
       >
-        <Text>Login</Text>
+        <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }}>
+          Login
+        </Text>
       </TouchableOpacity>
     </KeyboardAvoidingView>
   );
@@ -56,7 +51,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   container: {
-    // backgroundColor: "tomato",
     width: "80%",
     padding: 5,
   },
@@ -70,6 +64,7 @@ const styles = StyleSheet.create({
   },
   button: {
     fontSize: 18,
+    backgroundColor: "black",
     borderColor: "black",
     borderWidth: 1,
     margin: 5,

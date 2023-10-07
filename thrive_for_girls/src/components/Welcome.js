@@ -4,18 +4,18 @@ import React from 'react'
 export default function Welcome(){
     return(
         <View>
-            <Text style={styles.wel}>Welcome to Thrive for Girls! </Text>
+            <Text style={styles.wel}>Thrive for Girls</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     wel: {
-        fontSize : 25,
+        fontSize : 50,
         textAlign: 'center',
-        margin: 7,
+        margin: 40,
         fontWeight: 'bold',
-        background: "pink",
         padding: 20,
+        color: "#f093ee"
     }
 })
