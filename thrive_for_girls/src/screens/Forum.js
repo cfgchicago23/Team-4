@@ -2,9 +2,12 @@
 
 import React from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
-import { posts } from './ForumData'; // Import your sample data
+import { useNavigation } from '@react-navigation/native';
+import { posts } from './ForumData'; // Import your data
 
-const Forum = ({ navigation }) => {
+const Forum = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={{ flex: 1, padding: 16 }}>
       <FlatList

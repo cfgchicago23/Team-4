@@ -2,19 +2,16 @@
 
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
+import { comments } from './ForumData'; // Import your comments data
 
 const PostDetails = ({ route }) => {
   const { post } = route.params;
 
-  // Assuming you have a comments array in your mockData.js
+  // Filter comments for the selected post
   const commentsForPost = comments.filter((comment) => comment.postId === post.id);
 
   return (
     <View style={{ flex: 1, padding: 16 }}>
-      <View style={{ padding: 16, borderBottomWidth: 1, borderColor: '#ccc' }}>
-        <Text style={{ fontSize: 18 }}>{post.title}</Text>
-        <Text style={{ marginTop: 8 }}>{post.content}</Text>
-      </View>
       <Text style={{ marginTop: 16, fontSize: 20 }}>Comments:</Text>
       <FlatList
         data={commentsForPost}
