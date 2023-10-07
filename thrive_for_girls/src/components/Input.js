@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import React from "react";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
+// import { createStackNavigator } from "@react-navigation/stack";
 
 export default function Input() {
   const navigation = useNavigation();
