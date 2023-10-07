@@ -6,7 +6,7 @@ import TabNavigator from "./TabNavigator";
 import AdminTabNav from "./AdminTabNav";
 
 import PostDetails from "./src/screens/PostDetails";
-import CreatePost from "./src/screens/CreatePost";
+import LessonDetails from "./src/screens/LessonDetails";
 
 const Stack = createStackNavigator();
 
@@ -17,7 +17,7 @@ export default function StackNavigator() {
         <Stack.Screen name='HomeScreen' component={TabNavigator}/>
         <Stack.Screen name='AdimHomeScreen' component={AdminTabNav}/>
         <Stack.Screen name='PostDetails' component={PostDetails}/>
-        <Stack.Screen name='CreatePost' component={CreatePost}/>
+        <Stack.Screen name='LessonDetails' component={LessonDetails}/>
     </Stack.Navigator>
   );
 }

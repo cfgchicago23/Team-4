@@ -16,7 +16,7 @@ export default function TabNavigator() {
             tabBarIcon: ({ focused, color, size }) => {
                 let iName;
 
-                if (route.name === "Home") {
+                if (route.name === "Dashboard") {
                     iName = focused ? 'home' : 'home-outline';
                 } else if (route.name === "Profile") {
                     iName = focused ? 'person-circle-sharp' : 'person-circle-outline';
@@ -39,7 +39,7 @@ export default function TabNavigator() {
             tabBarInactiveTintColor: 'gray',
 
         })}>
-            <Tab.Screen name='Home' component={Dashboard} options={{headerShown: false}}/>
+            <Tab.Screen name='Dashboard' component={Dashboard} options={{headerShown: false}}/>
             <Tab.Screen name='Lessons' component={Lessons} options={{headerShown: false}}/>
             <Tab.Screen name='Profile' component={Profile} options={{headerShown: false}}/>
             <Tab.Screen name='Forum' component={Forum} options = {{headerShown: false}}/>

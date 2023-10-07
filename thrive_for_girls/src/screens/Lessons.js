@@ -1,86 +1,107 @@
-import React, { useState } from 'react';
-import { StyleSheet, FlatList, TouchableOpacity, View, Image, Text, StatusBar, SafeAreaView } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+  View,
+  Image,
+  Text,
+  StatusBar,
+  SafeAreaView,
+  ScrollView,
+} from "react-native";
+import LessonCardDetailed from "../components/LessonCardDetailed";
 const Lessons = () => {
   const data = [
     {
       id: 1,
-      image: 'https://i.pinimg.com/564x/f1/5f/4d/f15f4df7c5c1a3d939f46719d2c2b55c.jpg',
-      description: 'Lesson One',
-      color: '#11ad09',
+      title: "Lesson One",
+      color: "#11ad09",
       completed: 1,
+      icon: 'head-lightbulb'
     },
 
     {
       id: 2,
-      image: 'https://i.pinimg.com/564x/f1/5f/4d/f15f4df7c5c1a3d939f46719d2c2b55c.jpg',
-      description: 'Lesson Two',
-      color: '#11ad09',
+      title: "Lesson Two",
+      color: "#11ad09",
       completed: 1,
+      icon: 'head-lightbulb'
+
     },
 
     {
       id: 3,
-      image: 'https://i.pinimg.com/564x/f1/5f/4d/f15f4df7c5c1a3d939f46719d2c2b55c.jpg',
-      description: 'Lesson Three',
-      color: '#11ad09',
+      title: "Lesson Three",
+      color: "#11ad09",
       completed: 1,
+      icon: 'material-design'
     },
 
     {
       id: 4,
-      image: 'https://i.pinimg.com/564x/f1/5f/4d/f15f4df7c5c1a3d939f46719d2c2b55c.jpg',
-      description: 'Lesson Four',
-      color: '#11ad09',
+      title: "Lesson Four",
+      color: "#11ad09",
       completed: 1,
+      icon: 'head-lightbulb'
     },
 
     {
       id: 5,
-      image: 'https://i.pinimg.com/564x/f1/5f/4d/f15f4df7c5c1a3d939f46719d2c2b55c.jpg',
-      description: 'Lesson Five',
-      color: '#11ad09',
+      title: "Lesson Five",
+      color: "#11ad09",
       completed: 1,
+      icon: 'material-design'
     },
 
     {
       id: 6,
-      image: 'https://i.pinimg.com/564x/f1/5f/4d/f15f4df7c5c1a3d939f46719d2c2b55c.jpg',
-      description: 'Lesson Six',
-      color: '#11ad09',
+      title: "Lesson Six",
+      color: "#11ad09",
       completed: 1,
+      icon: 'head-lightbulb'
     },
 
     {
       id: 7,
-      image: 'https://i.pinimg.com/564x/f1/5f/4d/f15f4df7c5c1a3d939f46719d2c2b55c.jpg',
-      description: 'Lesson Seven',
-      color: '#11ad09',
+      title: "Lesson Seven",
+      color: "#11ad09",
       completed: 1,
+      icon: 'material-ui'
+    },
+    {
+      id: 8,
+      title: "Lesson Eight",
+      color: "#11ad09",
+      completed: 1,
+      icon: 'head-lightbulb'
+    },
+    {
+      id: 9,
+      title: "Lesson Nine",
+      color: "#11ad09",
+      completed: 1,
+      icon: 'material-ui'
+    },
+    {
+      id: 10,
+      title: "Lesson Ten",
+      color: "#11ad09",
+      completed: 1,
+      icon: 'material-design'
     },
   ];
 
-  const [lessons, setLessons] = useState(data);
-
-  const renderItem = ({ item }) => (
-    <TouchableOpacity style={styles.lesson} onPress={() => {}}>
-      <Image style={styles.image} source={{ uri: item.image }} />
-      <View style={styles.details}>
-        <Text style={styles.description}>{item.description}</Text>
-        <Text style={styles.id}>{item.id}</Text>
-      </View>
-    </TouchableOpacity>
-  );
-
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={lessons}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id.toString()}
-      />
-    </View>
+    <SafeAreaView style={{ backgroundColor: "pink", flex: 1 }}>
+      <ScrollView>
+        {data.map((item, index) => (
+          <View key={index} style={{}}>
+            <LessonCardDetailed title={item.title} description={item.description} icon={item.icon}/>
+          </View>
+        ))}
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -90,11 +111,11 @@ const styles = StyleSheet.create({
     paddingTop: StatusBar.currentHeight || 0,
   },
   lesson: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     padding: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    borderBottomColor: "#ccc",
   },
   image: {
     width: 50,
@@ -103,13 +124,14 @@ const styles = StyleSheet.create({
   },
   details: {
     flex: 1,
+    marginLeft: 20,
   },
   description: {
     fontSize: 18,
   },
   id: {
     fontSize: 14,
-    color: '#666',
+    color: "#666",
   },
 });
 
