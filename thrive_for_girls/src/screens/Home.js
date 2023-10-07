@@ -5,9 +5,7 @@ import SentimentChart from "./SentimentChart";
 export default function Home() {
   return (
     <View>
-
       <SentimentChart />
-
     </View>
   );
 }

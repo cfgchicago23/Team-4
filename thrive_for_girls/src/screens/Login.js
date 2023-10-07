@@ -1,7 +1,7 @@
-import { StyleSheet, View } from "react-native";
-import Logo from "./components/Logo";
-import Welcome from "./components/Welcome";
-import Input from "./components/Input";
+import { View } from "react-native";
+import Logo from "../components/Logo";
+import Input from "../components/Input";
+import Welcome from "../components/Welcome";
 
 export default function Login() {
   return (
