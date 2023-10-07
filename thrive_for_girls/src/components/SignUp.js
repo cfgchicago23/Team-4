@@ -52,7 +52,7 @@ import {
         </View>
 
         <TouchableOpacity onPress={() => navigation.navigate("LoginTemp")} style={styles.button}>
-          <Text>Register</Text>
+          <Text>Register </Text>
         </TouchableOpacity>
         
       </KeyboardAvoidingView>
